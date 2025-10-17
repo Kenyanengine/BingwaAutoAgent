@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bingwa.autoagent">
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="Bingwa Auto Agent"
+        android:supportsRtl="true"
+        android:allowBackup="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        
+        <receiver android:name=".SmsReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
